@@ -4,6 +4,7 @@ import cors from 'cors';
 import { userRoutes } from './app/module/user/user.routes';
 import { projectsRoutes } from './app/module/projects/project.routes';
 import globalErrorHandler from './app/middleware/globalErrorHandler';
+import { blogRoutes } from './app/module/blogs/blogs.routes';
 
 dotenv.config();
 const app = express();
@@ -18,6 +19,7 @@ app.get('/', (req: Request, res: Response) => {
 // Define routes
 app.use('/', userRoutes);
 app.use('/', projectsRoutes);
+app.use('/', blogRoutes);
 
 
 
